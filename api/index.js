@@ -8,6 +8,8 @@ const multer = require("multer");
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/users");
 const postRouter = require("./routes/posts");
+const conversationRouter = require("./routes/conversations");
+const messageRouter = require("./routes/messages");
 const path = require("path");
 
 dotenv.config();
@@ -58,6 +60,8 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/users", userRouter);
 app.use("/api/posts", postRouter);
+app.use("/api/conversations", conversationRouter);
+app.use("/api/messages", messageRouter);
 
 app.listen(8800, () => {
     console.log("connected 8800");
